@@ -1,5 +1,5 @@
 //importing user model
-const User=require('../models/user')
+const User=require('../models/user');
 
 module.exports.profile=function(req,res){
     res.render('user_profile',{
