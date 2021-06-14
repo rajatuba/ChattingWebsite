@@ -1,0 +1,15 @@
+{
+  "name": "chattingsite",
+  "version": "1.0.0",
+  "description": "My social media web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "social",
+    "website"
+  ],
+  "author": "Rajat Uba",
+  "license": "ISC"
+}
