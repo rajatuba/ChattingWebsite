@@ -7,3 +7,5 @@ This is a chating website developed using Express, MongoDB, Socket.io and many o
 5. npm install express-ejs-layouts (for using layouts)
 6. npm install mongoose (for linking mongodb using mongoose)
 7. npm install cookie-parser (for cookie)
+
+**Manual Authentication**
