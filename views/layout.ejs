@@ -4,6 +4,9 @@
             <%= title %>
         </title>
         <link rel="stylesheet" href="/css/layout.css">
+
+        <!--For extraction of styles-->
+        <%- style %>
     </head>
 
     <body>
@@ -15,5 +18,8 @@
 
         <!-- including footer-->
         <%- include('_footer'); %>
+
+        <!-- For extraction of scripts-->
+        <%- script %>
     </body>
 </html>
