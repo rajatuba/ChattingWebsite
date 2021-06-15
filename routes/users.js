@@ -20,4 +20,7 @@ router.post('/create-session',
     usersController.createSession
 );
 
+//sign out
+router.get('/sign-out',usersController.destrySession);
+
 module.exports=router;
