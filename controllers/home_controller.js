@@ -1,9 +1,13 @@
-module.exports.home=function(req,res){
-    // console.log(req.cookies);
-    // res.cookie('user_id',25);
+//for displaying post
+const Post=require('../models/post');
 
-    return res.render('home',{
-        title:'Home'
+module.exports.home=function(req,res){
+    // populating the user of each post
+    Post.find({}).populate('user').exec(function(err,posts){
+        return res.render('home',{
+            title:'ChattingSite | Home',
+            posts:posts
+        });
     });
 }
 
