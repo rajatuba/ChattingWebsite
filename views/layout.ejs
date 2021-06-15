@@ -4,6 +4,8 @@
             <%= title %>
         </title>
         <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
 
         <!--For extraction of styles-->
         <%- style %>
@@ -13,8 +15,10 @@
         <!--Including header-->
         <%- include('_header'); %>
 
-        <!--Variable part-->
-        <%- body %>
+        <main id="layout-main">
+            <!--Variable part-->
+            <%- body %>
+        </main>
 
         <!-- including footer-->
         <%- include('_footer'); %>
