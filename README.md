@@ -10,3 +10,4 @@ This is a chating website developed using Express, MongoDB, Socket.io and many o
 8. npm install passport (for authentication of user)
 9. npm install passport-local (passport local strategy)
 10. npm install express-session (for express sessions)
+11. npm install connect-mongo (setting up mongo store for session cookies)

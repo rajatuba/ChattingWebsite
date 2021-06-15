@@ -13,10 +13,13 @@ const expressLayouts=require('express-ejs-layouts');
 const db=require('./config/mongoose');
 
 //used for cookie session
-const session=require('express-session');
+const session =require('express-session');
 //passport
 const passport=require('passport');
 const passportLocal=require('./config/passport-local-strategy');
+
+//mongo store for session cookies
+const MongoStore=require('connect-mongo');
 
 //Cookie - encode and decode
 app.use(express.urlencoded());
@@ -35,14 +38,24 @@ app.set('view engine','ejs');
 app.set('views','./views');
 
 //setting up session
+//mongo store is used to store session cookie in db
 app.use(session({
     name: 'chattingsite',
     secret: 'blahsomething',
     saveUninitialized:false,
     resave:false,
     cookie:{
-        maxAge:(1000*60*100)
-    }
+        maxAge:(1000*60*10)
+    },
+    store:MongoStore.create(
+        {
+            mongoUrl:'mongodb://localhost/ChattingSite_development',
+            autoRemove:'disabled'
+        },
+        function(err){
+            console.log(err || 'connect-mongodb setup ok');
+        }
+    )
 }));
 
 //intializing passport and session
