@@ -44,3 +44,8 @@ module.exports.create=function(req,res){
         }
     });
 }
+
+//Sign in and create a session for user
+module.exports.createSession=function(req,res){
+    return res.redirect('/');
+}
