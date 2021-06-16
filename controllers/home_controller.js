@@ -1,5 +1,7 @@
 //for displaying post
 const Post=require('../models/post');
+//for displaying users
+const User=require('../models/user');
 
 module.exports.home=function(req,res){
     // populating the user of each post
@@ -12,11 +14,13 @@ module.exports.home=function(req,res){
         }
     })
     .exec(function(err,posts){
-        return res.render('home',{
-            title:'ChattingSite | Home',
-            posts:posts
+        User.find({},function(err,users){
+            return res.render('home',{
+                title:'ChattingSite | Home',
+                posts:posts,
+                all_users:users
+            });
         });
     });
 }
-
 //module.exports.actionName=function(req,res){}
