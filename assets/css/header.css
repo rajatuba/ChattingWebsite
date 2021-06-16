@@ -1,0 +1,18 @@
+header {
+  background-color: lightslategrey;
+  display: flex;
+  color: black; }
+  header h2 {
+    width: 80%;
+    padding-left: 10px; }
+    header h2 a {
+      color: black; }
+  header #header-element {
+    width: 20%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 15px; }
+    header #header-element :nth-child(even) {
+      margin-left: 10px; }
