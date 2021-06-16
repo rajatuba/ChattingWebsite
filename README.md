@@ -12,3 +12,4 @@ This is a chating website developed using Express, MongoDB, Socket.io and many o
 10. npm install express-session (for express sessions)
 11. npm install connect-mongo (setting up mongo store for session cookies)
 12. npm install node-sass-middleware (Middleware for sass/scss)
+13. npm install connect-flash (for flash messages)
