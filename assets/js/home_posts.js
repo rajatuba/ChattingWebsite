@@ -1,7 +1,7 @@
 {
     //method to submit the form data for new post using AJAx
     let createPost=function(){
-        let newPostForm=$('#new-post-form').val();
+        let newPostForm=$('#new-post-form');
         newPostForm.submit(function(e){
             e.preventDefault();
 
@@ -13,6 +13,7 @@
                     console.log(data.data);
                     let newPost=newPostDOM(data.data.post);
                     $('#posts-list-container > ul').prepend(newPost);
+                    deletePost($(' .delete-post-button',newPost));
                 },error:function(error){
                     console.log(error.resposeText);
                 }
@@ -50,5 +51,22 @@
     </li>`);
     }
 
+    //method to delete post from DOM
+    let deletePost=function(deleteLink){
+        $(deleteLink).click(function(e){
+            e.preventDefault();
+
+            $.ajax({
+                type:'get',
+                url:$(deleteLink).prop('href'),
+                success:function(data){
+                    console.log(data);
+                    $(`#post-${data.data.post_id}`).remove();
+                },error:function(error){
+                    console.log(error.resposeText);
+                }
+            });
+        });
+    }
     createPost();
 }
